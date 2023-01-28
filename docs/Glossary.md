@@ -1,6 +1,21 @@
 # Glossary
 
-| Glossary |                                                                                            |
-|:--------:|:------------------------------------------------------------------------------------------:|
-|    f     | Linear Bayesian utility function sampled from a Gaussian prior. Defined in Assumption 3.5. |
-|          |                                                                                            |
+| Variable name |                                                                                                   Definition                                                                                                    |
+|:-------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|       f       | Linear Bayesian utility function sampled from a Gaussian prior. Defined in Assumption 3.2. Gaussian normal prior is defined with mean 0 and standard deviation diagonal matrix with 1/lambda_ on the diagonals. |
+|       T       |                                                                                Number of rounds processed in directed evolution.                                                                                |
+|       S       |                                                                                 Population of candidate sequences (of motifs).                                                                                  |
+|       M       |                                                                                                Population size.                                                                                                 |
+|       d       |                                              Number of genetic motifs in a sequence. Since we are working with motifs this is also the length of sequences x,y,z.                                               |
+|      mu       |                                                                                                 Mutation rate.                                                                                                  |
+|     sigma     |                                                                                   Standard deviation used in Assumption 3.5.                                                                                    |
+|     seed      |                                                                                                  Random seed.                                                                                                   |
+|    lambda_    |                                                                             Used in the Gaussian normal prior in linear function f.                                                                             |
+|     x,y,z     |                                                                                 Sequence (of motifs represented as 0s and 1s).                                                                                  |
+|      Phi      |                                                   Variable holding data from past populations including protein motifs and corresponding function utilities.                                                    |
+|      phi      |      Binary motif feature embedding random variable mapping from sequence space to motif space (0s and 1s with length of d). 0s and 1s correspond to favorable and non-favorable directions, respectively.      |
+|       U       |                                                                Variable holding history data of utilities of protein motifs in past populations.                                                                |
+|       V       |                                     Matrix used to update the theta posterior. It is calculated using history data of function utilities and corresponding protein motifs.                                      |
+|   theta_hat   |                                                                Theta posterior. Estimate of true value of theta calculated from historical data.                                                                |
+|  theta_tilde  |        Theta estimate sampled from the posterior distribution of theta generated using Thompson sampling. It represents the current estimate of the optimal value of theta in the optimization process.         |
+|  theta_star   |                                              Optimal theta - parametrization of the linear Bayesian utility model for which we aim to optimize the protein design.                                              |
