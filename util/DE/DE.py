@@ -13,7 +13,6 @@ def DE(d: int,
        mu: Callable[[int], float],
        sigma: float,
        f: Callable[[np.ndarray], float]
-
        ) -> Tuple[List[List[np.ndarray]], List[np.ndarray]]:
     """
     Basic Directed Evolution algorithm.
@@ -23,7 +22,7 @@ def DE(d: int,
 
     Args:
         sigma: Standard deviation.
-        theta_star: optimal theta - parametrization of the linear Bayesian utility model for which we aim to optimize the protein design
+        theta_star: optimal theta - parametrization of the linear Bayesian utility model for which we aim to optimize the protein design.
         f: Protein utility function that we are trying to maximize. Function includes a parameter theta that we are optimizing.
         d: Number of protein motifs, eq. Sequence length.
         T: Number of rounds.

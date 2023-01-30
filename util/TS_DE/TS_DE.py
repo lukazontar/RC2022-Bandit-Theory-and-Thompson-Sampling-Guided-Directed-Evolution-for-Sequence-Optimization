@@ -14,8 +14,7 @@ def TS_DE(d: int,
           mu: float,
           sigma: float,
           lambda_: float,
-          f: Callable[[np.ndarray], float],
-          verbose=False) -> Tuple[List[List[np.ndarray]], List[np.ndarray]]:
+          f: Callable[[np.ndarray], float]) -> Tuple[List[List[np.ndarray]], List[np.ndarray]]:
     """
     Thompson Sampling-guided Directed Evolution algorithm with bandit method.
     TS-DE is an iterative process, where at each time step we:
@@ -27,7 +26,6 @@ def TS_DE(d: int,
 
     Args:
         theta_star: optimal theta - parametrization of the linear Bayesian utility model for which we aim to optimize the protein design
-        verbose: Indicator whether log prints should be shown in the output (false by default).
         f: Protein utility function that we are trying to maximize. Function includes a parameter theta that we are optimizing.
         lambda_: Scalar that controls trade-off between exploitation and exploration in the optimization process.
         d: Number of protein motifs, eq. Sequence length.
@@ -71,21 +69,16 @@ def TS_DE(d: int,
 
         # --------------------------------------------------------------------------------------------
         # 3. Perform directed mutation.
-        num_ones_before_mut = np.array(S).sum()
         S = Directed_Mutation(d=d,
                               S=S,
                               theta=theta_tilde,
                               mu=mu)
         # --------------------------------------------------------------------------------------------
         # 4. Perform Crossover selection.
-        num_ones_before_crossover_selection = np.array(S).sum()
         S = Crossover_Selection(f=f,
                                 S=S,
                                 theta=theta_tilde)
-        num_ones_after_crossover_selection = np.array(S).sum()
-        if verbose:
-            print(
-                f"delta 1s (mut) = {num_ones_before_crossover_selection - num_ones_before_mut}, delta 1s (cs) = {num_ones_after_crossover_selection - num_ones_before_crossover_selection}, 1s % = {num_ones_after_crossover_selection / (M * d)}")
+
         # --------------------------------------------------------------------------------------------
         # 5. Augment dataset for the next iteration with measurements of the new population.
         for i in range(len(S)):

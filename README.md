@@ -2,7 +2,7 @@
 
 *Author:* **Luka Žontar**
 
-*Reproducibility Article*: TODO
+*Link to Reproducibility Article*: [here](./article/Reproducibility_Challenge_2022.pdf)
 
 *Reproduced Article:* **Bandit Theory and Thompson Sampling-guided Directed Evolution for Sequence Optimization**
 
