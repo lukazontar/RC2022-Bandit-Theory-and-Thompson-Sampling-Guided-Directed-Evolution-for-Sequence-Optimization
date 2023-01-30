@@ -53,5 +53,4 @@ python -m unittest discover test
 
 Now your environment is ready to go. Running unit tests validates if all went well in environment setup.
 
-Runing experiments in `notebooks` files produces some interesting results.:
-partying_face: :clinking_glasses:
+Runing experiments in `notebooks` files produces some interesting results.:partying_face: :clinking_glasses:
