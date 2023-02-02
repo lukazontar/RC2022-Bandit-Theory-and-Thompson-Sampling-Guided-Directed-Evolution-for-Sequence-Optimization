@@ -25,6 +25,7 @@ This repository contains folders:
 Here are the specifications of the computer that was used to reproduce the original article:
 
 - PyCharm Professional
+- Python 3.9
 - Windows 11 Pro
 - Processor: 11th Gen Intel(R) Core(TM) i7-1165G7, 2.80GHz
 - RAM: 32GB
