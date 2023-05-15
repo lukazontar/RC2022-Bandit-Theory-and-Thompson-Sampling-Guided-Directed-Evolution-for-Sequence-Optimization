@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/556385955.svg)](https://zenodo.org/badge/latestdoi/556385955)
+
 # Reproducibility Challenge 2022 :recycle:
 
 *Link to Reproducibility Article*: [here](./article/Reproducibility_Challenge_2022.pdf)
